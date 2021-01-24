@@ -49,6 +49,8 @@ body{
 .primary-heading{
     color:#fff;
     text-transform: uppercase;
+
+    backface-visibility:hidden;
 }
 .pr-hd-main{
     display:block;
@@ -57,12 +59,16 @@ body{
     letter-spacing:35px;
 
     animation-name:fromLeft;
-    animation-duration: 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 .pr-hd-sub{
+    display:block;
     font-size:20px;
     font-weight:700;
     letter-spacing:17.4px;
+
+    animation: fromRight 1s ease-out;
 }
 /* Animations */
 @keyframes fromLeft{
@@ -72,6 +78,21 @@ body{
     }
     80%{
         transform: translateX(10px);
+    }
+    100%{
+        opacity:1;
+        transform:translate(0);
+
+    }
+}
+
+@keyframes fromRight{
+    0%{
+        opacity:0;
+        transform:translateX(100px);
+    }
+    80%{
+        transform: translateX(-10px);
     }
     100%{
         opacity:1;
