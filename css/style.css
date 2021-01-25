@@ -102,6 +102,17 @@ body{
 
     }
 }
+@keyframes fromBottom{
+    0%{
+        opacity:0;
+        transform:translatey(100px);
+    }
+    100%{
+        opacity:1;
+        transform:translate(0);
+
+    }
+}
 
 .btn:link,
 .btn:visited{
@@ -111,7 +122,7 @@ body{
     display:inline-block;
     border-radius:100px;
     transition: all .2s;
-    
+    position:relative;
 }
 
 .btn:hover{
@@ -122,9 +133,29 @@ body{
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
-
-
 .btn-color{
     background:#fff;
     color:#c9bfbf;
+}
+.btn::after{
+    content:"";
+    display:inline-block;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    position:absolute;
+    border-radius: 100px;
+    z-index:-1;
+    transition:all .4s;
+}
+.btn-color::after{
+    background:#fff;
+}
+.btn:hover::after{
+    transform:scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn-animated{
+    animation:fromBottom .4s ease-out .75s;
 }
