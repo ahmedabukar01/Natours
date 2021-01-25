@@ -45,12 +45,14 @@ body{
     top:40%;
     left:50%;
     transform: translate(-50%,-50%);
+    text-align:center;
 }
 .primary-heading{
     color:#fff;
     text-transform: uppercase;
 
     backface-visibility:hidden;
+    padding-bottom:60px;
 }
 .pr-hd-main{
     display:block;
@@ -99,4 +101,30 @@ body{
         transform:translate(0);
 
     }
+}
+
+.btn:link,
+.btn:visited{
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 40px;
+    display:inline-block;
+    border-radius:100px;
+    transition: all .2s;
+    
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+
+.btn-color{
+    background:#fff;
+    color:#c9bfbf;
 }
